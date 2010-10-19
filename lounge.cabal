@@ -1,0 +1,71 @@
+name:              lounge
+version:           0.0.0
+license:           BSD3
+license-file:      LICENSE
+author:            Timo B. Hübel
+maintainer:        Timo B. Hübel
+synopsis:          A simple blog webapp using CouchDB.
+description:       A simple blog web application, based on Yesod and CouchDB.
+category:          Web
+stability:         Experimental
+cabal-version:     >= 1.6
+build-type:        Simple
+homepage:          http://github.com/tbh/lounge
+
+Flag development
+    Description:   Build the development executable.
+    Default:       False
+
+executable         simple-server
+    if flag(development)
+        Buildable: True
+    else
+        Buildable: False
+    main-is:       simple-server.hs
+    build-depends: base >= 4 && < 5,
+                   yesod >= 0.5 && < 0.6,
+                   time >= 1.1 && < 1.2,
+                   json >= 0.4 && < 0.5,
+                   CouchDB >= 0.11 && < 0.12,
+                   mtl >= 1.1.0 && < 1.1.1,
+                   MissingH >= 1.1 && < 1.2,
+                   old-locale >= 1.0.0 && < 1.0.1,
+                   wai-extra,
+                   directory,
+                   bytestring,
+                   template-haskell,
+                   hamlet
+    ghc-options:   -Wall
+    extensions:    TemplateHaskell, QuasiQuotes, TypeFamilies
+
+executable         devel-server
+    if flag(development)
+        Buildable: True
+    else
+        Buildable: False
+    build-depends: wai-handler-devel >= 0.1.0 && < 0.2
+    main-is:       devel-server.hs
+    ghc-options:   -Wall -O2
+
+executable         fastcgi
+    if flag(development)
+        Buildable: False
+    else
+        Buildable: True
+    cpp-options:   -DPRODUCTION
+    main-is:       fastcgi.hs
+    build-depends: wai-handler-fastcgi
+    ghc-options:   -Wall
+    extensions:    TemplateHaskell, QuasiQuotes, TypeFamilies
+
+executable         snap-server
+    if flag(development)
+        Buildable: False
+    else
+        Buildable: True
+    cpp-options:   -DPRODUCTION
+    main-is:       snap-server.hs
+    build-depends: wai-handler-snap
+    ghc-options:   -Wall
+    extensions:    TemplateHaskell, QuasiQuotes, TypeFamilies
+

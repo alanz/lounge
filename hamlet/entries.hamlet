@@ -1,0 +1,45 @@
+$maybe user user
+	%h2 
+		Posting as 
+		%em $uName.user$
+	%form.post!method=post!action=@PostR@
+		Title:
+		%br
+		%input.text!type=text!name=subject
+		%br
+		Text:
+		%br
+		%textarea!name=body
+		%br
+		Tags:
+		%br
+		%input.text!type=text!name=tags
+		%br
+		%input.button!type=submit!value=Post
+$forall entries entry
+	.entry
+		.title
+			%h1
+				%a!href=@EntryR.fst.entry@ $eTitle.snd.entry$ 
+					%span.sans »
+		.text $preEscapedString.eText.snd.entry$
+		.meta
+			%ul.tags
+				$forall eTags.snd.entry tag
+					%li
+						%a!href=@TagR.tag@ #$tag$
+			.author
+				%em by 
+				$eAuthor.snd.entry$ 
+				%em on 
+				$showTime.eTimestamp.snd.entry$
+			<a href='@EntryR.fst.entry@#disqus_thread'>Comments</a>
+<script type='text/javascript'>
+	var disqus_shortname = 'fortytools';
+	(function () {
+		var s = document.createElement('script'); s.async = true;
+		s.src = 'http://disqus.com/forums/fortytools/count.js';
+		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+</script>
+%br!style=clear:both

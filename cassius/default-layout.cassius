@@ -1,0 +1,167 @@
+body
+	font-family: Georgia,"Times New Roman",Times,serif
+	color: #666
+	font-size: 16px
+
+a
+	text-decoration: none
+	color: #111
+
+a:hover
+	color: #D00
+
+em
+	color: #aaa
+	font-style: italic
+	font-size: 1.2em
+
+h1, h2, h3, h4, h5, h6
+	color: black
+
+h1
+	font-size: 48px
+
+h2
+	font-size: 28px
+
+h3
+	font-size: 22px
+
+.sans
+	font-family: Lucida,Tahoma,sans
+	color: #aaa
+
+#blog
+	margin: 0 auto
+	width: 980px
+
+#header
+	padding-top: 15px
+
+#sidebar
+	float: right
+	width: 191px
+
+#sidebar h3
+	color: #aaa
+	margin-bottom: 15px
+
+#sidebar .tuned
+	padding-bottom: 15px
+	border-bottom: 4px double #ccc
+	margin-bottom: 15px
+
+#sidebar a
+	font-style: italic
+
+#sidebar .tuned a
+	font-size: 1.2em
+
+#sidebar .tweet a
+	font-size: 0.8em
+
+#sidebar li
+	line-height: 20px
+	margin-bottom: 10px
+
+#navigation
+	margin-left: 213px
+	padding: 15px 0
+	margin-top: 15px
+	border-top: 1px solid #ccc
+	border-bottom: 1px solid #ccc
+	height: 30px
+	margin-bottom: 40px
+	font-size: 28px
+
+#navigation a
+	border-bottom: none
+
+#navigation ul
+	display: inline
+
+#navigation ul li
+	float: right 
+	margin-left: 30px
+
+#navigation .claim
+	font-style: italic
+	margin-right: 130px
+	color: #aaa
+
+#content
+	margin: 0 240px 0 213px
+
+#content .text p
+	line-height: 28px
+
+#content .text a
+	border-bottom: 1px solid #ccc
+
+#content .title
+	margin-bottom: 15px
+
+#content > div
+	border-bottom: 4px double #ccc
+	margin-bottom: 20px
+	padding-bottom: 15px
+
+#content ul.tags li
+	display: inline
+	padding: 0 5px
+
+#content ul.tags a
+	-moz-border-radius: 3px 3px 3px 3px
+	border-radius: 3px 3px 3px 3px
+	background-color: #ccc
+	color: #fff
+	padding: 4px 7px 5px
+
+#content ul.tags a:hover
+	color: #D00
+
+#content .author
+	color: #111
+	margin-top: 10px
+	padding-bottom: 10px
+
+#content .meta
+	margin-top: 15px
+	text-align: right
+
+#content .fb_share
+	float: left
+
+#content .post input.text
+	width: 500px
+	margin-top: 5px
+	margin-bottom: 15px
+
+#content .post textarea
+	width: 500px
+	height: 150px
+	margin-top: 5px
+	margin-bottom: 15px
+
+#content form.post
+	margin-top: 10px
+	margin-bottom: 15px
+	padding-bottom: 15px
+	border-bottom: 4px double #ccc
+
+.text h1, .text h2, .text h3, .text h4, .text h5, .text h6
+	margin-bottom: 10px
+	margin-top: 15px
+
+.page p
+	margin-bottom: 5px
+
+#footer
+	margin-left: 213px
+	margin-bottom: 15px
+	height: 28px
+
+#footer ul li
+	float: left
+	margin-right: 30px
+

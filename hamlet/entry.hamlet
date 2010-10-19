@@ -1,0 +1,31 @@
+#maincontent
+	.entry
+		.title
+			%h1 $eTitle.entry$
+		.text
+			$preEscapedString.eText.entry$
+		.meta
+			<a class="fb_share" name='fb_share' type='button_count' href='http://www.facebook.com/sharer.php'>Share</a>
+			<script src='http://static.ak.fbcdn.net/connect.php/js/FB.Share' type='text/javascript'></script>
+			%ul.tags
+				$forall eTags.entry tag
+					%li
+						%a!href=@TagR.tag@ #$tag$
+			.author
+				%em by 
+				$eAuthor.entry$ 
+				%em on 
+				$showTime.eTimestamp.entry$
+			.comments
+				#disqus_thread
+					<script type='text/javascript'>
+						var disqus_identifier = '$eid$';
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = 'http://fortytools.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript=fortytools'>comments powered by Disqus.</a></noscript>
+					<a href='http://disqus.com' class='dsq-brlink'>blog comments powered by <span class='logo-disqus'>Disqus</span></a>
+%br!style=clear:both
