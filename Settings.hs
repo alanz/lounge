@@ -28,7 +28,7 @@ approot :: String
 -- you would probably want it to be:
 -- > approot = "http://www.yesod.com"
 -- Please note that there is no trailing slash.
-approot = "http://localhost:3000"
+approot = "http://www.fortytools.com"
 #else
 approot = "http://localhost:3000"
 #endif
