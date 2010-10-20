@@ -35,7 +35,7 @@
 							%a!href=@FeedR@ Abonniere 
 							unseren News Feed
 				.news
-					%h3 Letzte Meldungen.
+					%h3 Weltbewegendes.
 					.tweet
 					<!--
 					<iframe src="http://www.facebook.com/plugins/likebox.php?id=149039691782140&amp;width=191&amp;connections=3&amp;stream=false&amp;header=false&amp;height=255" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:191px; height:255px;" allowTransparency="true"></iframe>

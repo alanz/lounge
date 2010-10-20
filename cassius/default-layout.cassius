@@ -57,7 +57,7 @@ h3
 #sidebar .tuned a
 	font-size: 1.2em
 
-#sidebar .tweet a
+#sidebar .tweet_time a
 	font-size: 0.8em
 
 #sidebar li
