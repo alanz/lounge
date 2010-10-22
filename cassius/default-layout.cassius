@@ -98,6 +98,10 @@ h3
 #content .text a
 	border-bottom: 1px solid #ccc
 
+#content .text a.social
+  border-bottom: 0
+  padding: 0 5px
+
 #content .title
 	margin-bottom: 15px
 
