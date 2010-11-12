@@ -4,42 +4,56 @@
 		%meta!charset=utf-8
 		^pageHead.pc^
 		%link!rel=alternate!type=application/atom+xml!href=@FeedR@
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cardo|Lobster|Droid+Sans">
-		<script type="text/javascript">$$(document).ready(function() { $$(".tweet").tweet({ join_text: null,username:"fortytools",avatar_size:null,count:3,loading_text:"Lade Tweets..."});});</script>
+		<script type="text/javascript" src="/static/syntax/script/shCore.js"></script>
+		<script type="text/javascript" src="/static/syntax/script/shBrushHaskell.js"></script>
+		<link href="/static/syntax/styles/shCore.css" rel="stylesheet" type="text/css"/>
+		<link href="/static/syntax/styles/shThemeDefault.css" rel="stylesheet" type="text/css"/>
 		%title $pageTitle.pc$
 	%body
 		#blog
 			#header
 				%a!href=@EntriesR@
 					<img src="/static/logo.png" />
+				#claim
+					The 
+					<a href="http://www.fortytools.com"><img src="/static/ft.png"/></a>
+					Techblog.
 			#navigation
-				%span.claim We build your tools.
 				%ul
 					%li
-						%a!href=@about@ Über uns 
+						%a!href=@EntriesR@ Overview 
 							%span.sans »
 					%li
-						%a!href=@EntriesR@ Übersicht 
+						%a!href=@about@ About 
 							%span.sans »
 			#sidebar
 				.tuned
-					%h3 Auf dem Laufenden bleiben.
+					%h3 Stay in touch.
 					%ul
-						%li.twitter
-							<a href="http://twitter.com/fortytools">Folge</a> 
-							fortytools auf Twitter
-						%li.facebook
-							<a href="http://facebook.com/fortytools">Besuche</a> 
-							fortytools bei Facebook
-						%li.rss
-							%a!href=@FeedR@ Abonniere 
-							unseren News Feed
-				.news
-					%h3 Weltbewegendes.
-					.tweet
-					<!--
-					<iframe src="http://www.facebook.com/plugins/likebox.php?id=149039691782140&amp;width=191&amp;connections=3&amp;stream=false&amp;header=false&amp;height=255" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:191px; height:255px;" allowTransparency="true"></iframe>
-					-->
+						%li
+							<a href="http://twitter.com/fortytools">Follow</a> 
+							fortytools on Twitter
+						%li
+							%a!href=@FeedR@ Subscribe 
+							to the news feed
+						%li
+							<a href="http://fortytools.com">Visit</a> out company blog
+
+					%h3 Things we do.
+					%ul
+						%li
+							<a href="http://skippr.com">Skippr</a> our product
+						%li
+							<a href="http://hayoo.info">Hayoo!</a> Haskell API Search
+						%li
+							<a href="http://github.com/fortytools">fortytools</a> on github
+
+					%h3 Stuff we like.
+					%ul
+						%li
+							<a href="http://haskell.org">Haskell</a>
+						%li
+							<a href="http://sprawsm.com">Superawesøme</a>
 			#content
 				^pageBody.pc^
 			#footer
@@ -53,3 +67,7 @@
 					%li.last
 						%a!href=@LoginR@ Login 
 							%span.sans »
+
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>

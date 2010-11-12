@@ -14,7 +14,7 @@ import Yesod.Helpers.Static
 import qualified Settings
 import System.Directory
 import qualified Data.ByteString.Lazy as L
-import Yesod.WebRoutes
+import Web.Routes
 import Settings (hamletFile, cassiusFile, juliusFile)
 
 -- | The site argument for your application. This can be a good place to
@@ -78,7 +78,7 @@ instance Yesod Lounge where
 			addStylesheet $ StaticR $ StaticRoute ["reset-min.css"] []
 			addScript $ StaticR $ StaticRoute ["jquery-1.4.2.min.js"] []
 			addScript $ StaticR $ StaticRoute ["jquery.tweet.js"] []
-			addStyle $(Settings.cassiusFile "default-layout")
+			addCassius $(Settings.cassiusFile "default-layout")
 		hamletToRepHtml $(Settings.hamletFile "default-layout")
 
 	-- This is done to provide an optimization for serving static files from

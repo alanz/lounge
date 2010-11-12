@@ -13,6 +13,6 @@ getPageR pid = do
 	page <- (liftIO $ runLSM Settings.connStr $ loadPage pid) >>= maybe notFound return
 	defaultLayout $ do
 		setTitle $ string $ (pTitle page ++ " - " ++ title)
-		addBody $(hamletFile "page")
-		addStyle $(cassiusFile "page")
+		addHamlet $(hamletFile "page")
+		addCassius $(cassiusFile "page")
 

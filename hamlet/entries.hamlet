@@ -22,18 +22,19 @@ $forall entries entry
 			%h1
 				%a!href=@EntryR.fst.entry@ $eTitle.snd.entry$ 
 					%span.sans »
+		.author
+				%em Written by 
+				$eAuthor.snd.entry$ 
+				%em on 
+				$showTime.eTimestamp.snd.entry$
 		.text $preEscapedString.eText.snd.entry$
 		.meta
+			.count
+				<a href='@EntryR.fst.entry@#disqus_thread'>Comments</a>
 			%ul.tags
 				$forall eTags.snd.entry tag
 					%li
 						%a!href=@TagR.tag@ #$tag$
-			.author
-				%em by 
-				$eAuthor.snd.entry$ 
-				%em on 
-				$showTime.eTimestamp.snd.entry$
-			<a href='@EntryR.fst.entry@#disqus_thread'>Comments</a>
 <script type='text/javascript'>
 	var disqus_shortname = 'fortytools';
 	(function () {

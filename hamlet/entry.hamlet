@@ -2,6 +2,11 @@
 	.entry
 		.title
 			%h1 $eTitle.entry$
+		.author
+				%em Written by 
+				$eAuthor.entry$ 
+				%em on 
+				$showTime.eTimestamp.entry$
 		.text
 			$preEscapedString.eText.entry$
 		.meta
@@ -11,11 +16,7 @@
 				$forall eTags.entry tag
 					%li
 						%a!href=@TagR.tag@ #$tag$
-			.author
-				%em by 
-				$eAuthor.entry$ 
-				%em on 
-				$showTime.eTimestamp.entry$
+			.clear
 			.comments
 				#disqus_thread
 					<script type='text/javascript'>

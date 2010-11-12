@@ -18,8 +18,8 @@ showTime = formatTime defaultTimeLocale "%B %d, %Y"
 
 checkAuth :: Handler (Maybe User)
 checkAuth = do
-		s <- reqSession `fmap` getRequest
-		maybe (return Nothing) findUser (lookup "user" s)
+		s <- lookupSession "user"
+		maybe (return Nothing) findUser s
 		where
 			findUser n = do
 				liftIO $ runLSM Settings.connStr $ loadUser n	

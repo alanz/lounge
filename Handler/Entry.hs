@@ -24,8 +24,8 @@ getEntriesR = do
 	entries <- liftIO $ runLSM Settings.connStr $ loadEntriesByDate
 	defaultLayout $ do
 		setTitle $ string title
-		addBody $(hamletFile "entries")
-		addStyle $(cassiusFile "entries")
+		addHamlet $(hamletFile "entries")
+		addCassius $(cassiusFile "entries")
 
 postPostR :: Handler ()
 postPostR = do
@@ -41,8 +41,8 @@ getEntryR eid = do
 	entry <- (liftIO $ runLSM Settings.connStr $ loadEntry eid) >>= maybe notFound return
 	defaultLayout $ do
 		setTitle $ string $ (eTitle entry ++ " - " ++ title)
-		addBody $(hamletFile "entry")
-		addStyle $(cassiusFile "entry")
+		addHamlet $(hamletFile "entry")
+		addCassius $(cassiusFile "entry")
 
 getTagR :: Tag -> Handler RepHtml
 getTagR tag = do
@@ -50,8 +50,8 @@ getTagR tag = do
 	entries <- (liftIO $ runLSM Settings.connStr $ loadEntriesByTag tag)
 	defaultLayout $ do
 		setTitle $ string title
-		addBody $(hamletFile "entries")
-		addStyle $(cassiusFile "entries")
+		addHamlet $(hamletFile "entries")
+		addCassius $(cassiusFile "entries")
 
 tags :: String -> [String]
 tags "" = []

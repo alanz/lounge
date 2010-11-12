@@ -10,7 +10,7 @@ getLoginR :: Handler RepHtml
 getLoginR = do
 	defaultLayout $ do
 		setTitle $ string $ title ++ " - Login"
-		addBody [$hamlet|
+		addHamlet [$hamlet|
 			.login
 				%form!method=post
 					Benutzer:

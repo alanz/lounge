@@ -23,11 +23,12 @@ executable         simple-server
         Buildable: False
     main-is:       simple-server.hs
     build-depends: base >= 4 && < 5,
-                   yesod >= 0.5 && < 0.6,
+                   yesod >= 0.6 && < 0.7,
+                   web-routes >= 0.23 && < 0.24,
                    time >= 1.1 && < 1.2,
                    json >= 0.4 && < 0.5,
                    CouchDB >= 0.12 && < 0.13,
-                   mtl >= 1.1.0 && < 1.1.1,
+                   mtl >= 1.1.1 && < 1.1.2,
                    MissingH >= 1.1 && < 1.2,
                    old-locale >= 1.0.0 && < 1.0.1,
                    wai-extra,
@@ -38,14 +39,14 @@ executable         simple-server
     ghc-options:   -Wall
     extensions:    TemplateHaskell, QuasiQuotes, TypeFamilies
 
-executable         devel-server
-    if flag(development)
-        Buildable: True
-    else
-        Buildable: False
-    build-depends: wai-handler-devel >= 0.1.0 && < 0.2
-    main-is:       devel-server.hs
-    ghc-options:   -Wall -O2
+--executable         devel-server
+--    if flag(development)
+--        Buildable: True
+--    else
+--        Buildable: False
+--    build-depends: wai-handler-devel >= 0.1.0 && < 0.2
+--    main-is:       devel-server.hs
+--    ghc-options:   -Wall -O2
 
 executable         fastcgi
     if flag(development)

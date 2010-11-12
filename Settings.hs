@@ -58,9 +58,9 @@ staticroot = approot ++ "/static"
 -- specific.
 connStr :: String
 #ifdef PRODUCTION
-connStr = "lounge"
+connStr = "lambda"
 #else
-connStr = "lounge"
+connStr = "lambda"
 #endif
 
 -- The rest of this file contains settings which rarely need changing by a
